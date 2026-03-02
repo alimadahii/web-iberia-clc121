@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Iberian Peninsula – CLC121 Web GIS</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="title">
+        <div class="h1">Iberian Peninsula – CLC121 (2006–2018)</div>
+        <div class="subtitle">Area_km2 / LU_121_201 / LU_121_203 / DV121 / D121KM2 / D121PCT</div>
+      </div>
+
+      <div class="filters">
+        <label>
+          DV121
+          <select id="dvFilter">
+            <option value="all">All</option>
+            <option value="1">DV121 = 1</option>
+            <option value="0">DV121 = 0</option>
+          </select>
+        </label>
+
+        <label>
+          Search Municipality (NAME_6)
+          <input id="nameSearch" type="text" placeholder="e.g., Níjar" />
+        </label>
+
+        <label>
+          D121KM2 min
+          <input id="d121Min" type="number" step="0.0001" placeholder="e.g., 0.10" />
+        </label>
+
+        <label>
+          D121KM2 max
+          <input id="d121Max" type="number" step="0.0001" placeholder="e.g., 5.00" />
+        </label>
+
+        <button id="btnApply">Apply</button>
+        <button id="btnClear">Clear</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="viewDiv"></section>
+
+      <aside id="sidePanel">
+        <div class="panelBlock">
+          <div class="panelTitle">Widgets</div>
+          <div id="widgetsDiv"></div>
+        </div>
+
+        <div class="panelBlock">
+          <div class="panelTitle">Attribute Table (sample)</div>
+          <div class="hint">Click a polygon OR a row to zoom + highlight and view attributes.</div>
+          <div id="tableMeta"></div>
+
+          <div class="tableWrap">
+            <table id="attrTable">
+              <thead>
+                <tr>
+                  <th>POLY_ID</th>
+                  <th>NAME_6</th>
+                  <th>Area_km2</th>
+                  <th>LU_121_201</th>
+                  <th>LU_121_203</th>
+                  <th>DV121</th>
+                  <th>D121KM2</th>
+                  <th>D121PCT</th>
+                </tr>
+              </thead>
+              <tbody id="attrBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="https://js.arcgis.com/4.30/"></script>
+  <script>
+    window.__WEBMAP_ID__ = "050882fb65034214ab008a7ff272bee8";
+  </script>
+  <script src="./app.js"></script>
+</body>
+</html>

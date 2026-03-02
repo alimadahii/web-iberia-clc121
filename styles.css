@@ -1,0 +1,156 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#topbar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e6e6e6;
+  background: #ffffff;
+}
+
+.title .h1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.title .subtitle {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.filters {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+.filters input, .filters select {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  outline: none;
+}
+.filters button {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.filters button:hover {
+  background: #efefef;
+}
+
+#main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: 0;
+}
+
+#viewDiv {
+  min-height: 0;
+}
+
+#sidePanel {
+  border-left: 1px solid #e6e6e6;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.panelBlock {
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.panelTitle {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.hint {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+#tableMeta {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.tableWrap {
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+}
+
+#attrTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+#attrTable thead th {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+  border-bottom: 1px solid #eaeaea;
+  text-align: left;
+  padding: 8px;
+  white-space: nowrap;
+}
+#attrTable tbody td {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 7px 8px;
+  white-space: nowrap;
+}
+#attrTable tbody tr:hover {
+  background: #f7fbff;
+  cursor: pointer;
+}
+
+.widgetBlock {
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.widgetTitle {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.widgetContent {
+  min-height: 40px;
+}
